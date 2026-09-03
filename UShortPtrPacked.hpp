@@ -109,6 +109,8 @@ public:
         this->ptr = reinterpret_cast<void*>(raw_ptr bitor tag);
     }
 
+    #ifndef _MSC_VER
+    
     static bool isOSProviding57BitAddressing() noexcept
     {
         int cpuInfo[4] = { 0 };
@@ -141,6 +143,8 @@ public:
 
         return success;
     }
+
+    #endif
 };
 
 #endif
