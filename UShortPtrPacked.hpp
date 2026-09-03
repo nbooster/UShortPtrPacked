@@ -1,15 +1,18 @@
 #ifndef USHORT_PTR_PACKED_HPP
 #define USHORT_PTR_PACKED_HPP
 
-#include <sys/mman.h>
-
 #include <bit>
 #include <cstdint>
 
 #ifdef _MSC_VER
+
 #include <intrin.h>
+
 #else
+
 #include <cpuid.h>
+#include <sys/mman.h>
+
 #endif
 
 template<uint8_t valueBits = 16>
